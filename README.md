@@ -4,8 +4,8 @@
 
 <hr>
 
+<h5>TODO:</h5> 
 <ul>
-    <h5>TODO:</h5> 
     <li>
         Remove home.blade.php
     </li>
