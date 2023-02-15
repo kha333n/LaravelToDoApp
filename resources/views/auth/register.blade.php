@@ -3,14 +3,15 @@
 
 @section('content')
 
-
+<fieldset>
+    <legend>Register:</legend>
     <form method="POST" action="/register">
         @csrf
         <div>
             <label for="name">Name:</label>
             <input type="text" name="name" id="name">
             @error('name')
-            <div class="invalid-feedback">{{ $message }}</div>
+            <div>{{ $message }}</div>
             @enderror
         </div>
 
@@ -18,7 +19,7 @@
             <label for="email">Email:</label>
             <input type="email" name="email" id="email">
             @error('email')
-            <div class="invalid-feedback">{{ $message }}</div>
+            <div>{{ $message }}</div>
             @enderror
         </div>
 
@@ -39,6 +40,5 @@
         <button type="submit">Register</button>
         <span>Already have account? <a href="/login">Login</a></span>
     </form>
-
-
+</fieldset>
 @endsection

@@ -10,6 +10,7 @@
         @else
             <a href="/register">Register User</a><br>
             <a href="/login">Login</a>
-        @endif </h1>
+        @endif
+    </h1>
 
 @endsection

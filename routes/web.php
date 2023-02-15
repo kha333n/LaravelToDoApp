@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [HomeController::class, 'index']);
     Route::get('/', [HomeController::class, 'index']);
+    /*Route::get('/home', [HomeController::class, 'index']);*/
+    Route::get('/home', function () {
+        return redirect('/tasks');
+    });
+    Route::get('/tasks', [TaskController::class, 'index']);
+    Route::get('tasks/create', [TaskController::class, 'create']);
+    Route::post('tasks/store', [TaskController::class, 'store']);
+    Route::get('tasks/show/{id}', [TaskController::class, 'show']);
+    Route::get('tasks/edit/{id}', [TaskController::class, 'edit']);
+    Route::put('/tasks/update/{id}', [TaskController::class, 'update']);
+    Route::put('/tasks/complete', [TaskController::class, 'complete']);
+    Route::delete('/tasks/delete', [TaskController::class, 'destroy']);
 });
 
 /*Auth Controller*/
