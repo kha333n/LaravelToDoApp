@@ -3,6 +3,7 @@
 <small>If you just need a simple User managment check my other repository here <a href="https://github.com/BugsBunny421/LaravelUserManagement">LaravelUserManagement</a>.</small>
 
 <ul>
+    <lh>TODO:</lh> 
     <li>
         Remove home.blade.php
     </li>
