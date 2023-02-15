@@ -1,2 +1,3 @@
-<h1>Basic User Registeration and Login with laravel 9</h1>
-<small>It used all of the laravel's inbuiltt tools, Good Starting point for Beginners.</small>
+<h1>Basic Todo app in Laravel</h1>
+<p>It used all of the laravel's inbuiltt tools, Good Starting point for Beginners.</p>
+<small>UserManagement included from my other <a href="https://github.com/BugsBunny421?tab=repositories">Repository</a>.</small>
