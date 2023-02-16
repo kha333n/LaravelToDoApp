@@ -55,15 +55,17 @@ class TaskController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
 
+    //TODO: can use route model binding...   in all functions...   and avoid explicitly finding task and error checking...
     public function show($id)
     {
         $task = Task::find($id);
         if (!$task) {
             return redirect('/tasks')->withErrors(['msg' => 'Task not found']);
         }
+        //TODO: canAccess should be in Task model not controller...
         if (!$this->canAccess($task)) {
             return redirect('/tasks')->withErrors(['msg' => 'You are not authorized to access this task']);
         }
@@ -153,6 +155,7 @@ class TaskController extends Controller
         if (!$task) {
             return redirect('/tasks')->withErrors(['msg' => 'Task not found']);
         }
+        //TODO: canAccess move to Task model...
         if (!$this->canAccess($task)) {
             return redirect('/tasks')->withErrors(['msg' => 'You are not authorized to access this task']);
         }
